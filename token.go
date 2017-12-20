@@ -41,7 +41,6 @@ func response(conn* net.UDPConn, addr* net.UDPAddr, message []byte) {
 }
 
 type Graph map[Node]Node
-type conMap map[int]*net.UDPAddr
 
 var base_port int
 var maintainance_port int
@@ -57,10 +56,6 @@ func CheckError(err error) {
 	   fmt.Println("Error: " , err)
 	   os.Exit(0)
    }
-}
-
-func (n Node) Port() int {
-	return n.port
 }
 
 func create_node(a int) Node {
